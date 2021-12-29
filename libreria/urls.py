@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.contrib.staticfiles.urls import  static
 
 urlpatterns =[
     path('', views.inicio, name='inicio'),
@@ -14,4 +16,4 @@ urlpatterns =[
     path('turnos', views.turnos, name='turnos'),
     path('turnos/turnosC', views.turnosC, name='turnosC'),
     path('turnos/turnosE',views.turnosE, name='turnosE'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

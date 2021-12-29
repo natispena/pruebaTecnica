@@ -15,21 +15,29 @@
                      <th>HORA </th>
                      <th>ESTADO</th>
                      <th>USUARIO</th>
+                     <th>EDITOR</th>
                      <th>ACCIONES</th>
                  </tr>
              </thead>
              <tbody>
+                {%for turno in turnos %}
                  <tr>
-                     <td>1</td>
-                     <td>19</td>
-                     <td>10:05 p. m.</td>
-                     <td>pendiente</td>
-                     <td>1070982783</td>
+                     <td>{{turno.id}}</td>
+                     <td>{{turno.numero}}</td>
+                     <td>{{turno.hora}}</td>
+                     <td>{{turno.estado}}</td>
+                    {% for usuario in turno.usuario_set.all %}
+                     <td>{{Usuario.nombre}}</td>
+
+                    {% endfor %}
+                     <td>{{turno.usuarioEditor}}</td>
+
                      <td>
                          <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a>
                          <a name="" id="" class="btn btn-info" href="{% url 'turnosE' %}" role="button">editar</a>
                     </td>
                  </tr>
+                 {% endfor %}
              </tbody>
          </table>
          
