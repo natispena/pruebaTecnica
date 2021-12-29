@@ -11,3 +11,10 @@ def usuariosC(request):
     return render(request,'usuarios/crear.html')
 def usuariosE(request):
     return render(request,'usuarios/editar.html')
+
+def turnos(request):
+    return render(request,'turnos/index.html')
+def turnosC(request):
+    return render(request,'turnos/crear.html')
+def turnosE(request):
+    return render(request,'turnos/editar.html')
