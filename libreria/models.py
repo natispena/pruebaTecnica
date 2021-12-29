@@ -16,4 +16,5 @@ class Turnos(models.Model):
     numero = models.IntegerField()
     hora=models.TimeField()
     estado=models.CharField(max_length=100, choices=estados, default='p')
-    Usuario=models.CharField(max_length=100)
+    Usuario=models.ForeignKey(Usuario, null=True, on_delete=models.CASCADE)
+    usuarioEditor= models.CharField(max_length=100, null=True)
