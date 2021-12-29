@@ -1,27 +1,10 @@
 <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for campo in formulario %}
     <div class="mb-3">
-        <label for="" class="form-label">NUMERO</label>
-        <input type="number"
-         class="form-control" name="" id="" aria-describedby="helpId" placeholder="NUMERO">
-    </div><div class="mb-3">
-        <label for="" class="form-label">HORA</label>
-        <input type="time"
-         class="form-control" name="" id="" aria-describedby="helpId" placeholder="HORA">
+        <label for="" class="form-label">{{campo.label}}</label>
+        <input type="{{campo.field.widget.input_type}}"
+         class="form-control" name="" id="" aria-describedby="helpId" placeholder="{{campo.label}}">
     </div>
-    <div class="mb-3">
-        <label for="" class="form-label">ESTADO</label>
-        <input type="text"
-         class="form-control" name="" id="" aria-describedby="helpId" placeholder="ESTADO">
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">USUARIO</label>
-        <input type="text"
-         class="form-control" name="" id="" aria-describedby="helpId" placeholder="USUARIO">
-    </div>
-    
-    <div class="mb-3">
-        <label for="" class="form-label">EDITOR </label>
-        <input type="text"
-         class="form-control" name="" id="" aria-describedby="helpId" placeholder="USUARIO EDITOR">
-    </div>
+    {% endfor %}
 </form>

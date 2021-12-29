@@ -27,7 +27,7 @@
                      <td>{{turno.hora}}</td>
                      <td>{{turno.estado}}</td>
                     {% for usuario in turno.usuario_set.all %}
-                     <td>{{Usuario.nombre}}</td>
+                     <td>{{Usuario.id}}</td>
 
                     {% endfor %}
                      <td>{{turno.usuarioEditor}}</td>
