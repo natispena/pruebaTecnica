@@ -30,11 +30,11 @@
                      <td>{{usuario.telefono}}</td>
                      <td>{{usuario.identificacion}}</td>
                      <td>{{usuario.staff}}</td>
-                     <td>
+                     <td> 
                      <img src="{{ usuario.foto.url }}" height="100" />
                     </td>
                      <td>
-                         <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a>
+                         <a name="" id="" class="btn btn-danger" href="{% url 'usuariosB' usuario.id %}" role="button">Borrar</a>
                          <a name="" id="" class="btn btn-info" href="{% url 'usuariosE' %}" role="button">editar</a>
                     </td>
                  </tr>

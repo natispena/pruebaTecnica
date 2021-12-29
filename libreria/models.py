@@ -25,3 +25,5 @@ class Turno(models.Model):
     Usuario=models.ForeignKey(Usuario, null=True, on_delete=models.CASCADE)
     usuarioEditor= models.CharField(max_length=100, null=True)
 
+
+
